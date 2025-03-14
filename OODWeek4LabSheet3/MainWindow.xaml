@@ -6,14 +6,43 @@
         xmlns:local="clr-namespace:OODWeek4LabSheet3"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="80*"/>
-        </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Content="Get Data" Width="100" Height="25" Click="Button_CLick"/>
-        <ListBox Grid.Row="1" Name="Ex1ListBox"/>
+    <TabControl TabStripPlacement="Top">
+        <TabItem Header="Ex1" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
 
-    </Grid>
+                <Button Grid.Row="0" Content="Get Data" Width="100" Height="25" Click="Button_CLick"/>
+                <ListBox Grid.Row="1" Name="Ex1ListBox"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex2" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex2Button"  Content="Exercise 2" Width="100" Height="25" Click="Ex2Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex2DataGrid"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex3" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex3Button"  Content="Exercise 3" Width="100" Height="25" Click="Ex3Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex3DataGrid"/>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
 </Window>

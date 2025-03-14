@@ -26,13 +26,44 @@ namespace OODWeek4LabSheet3
             InitializeComponent();
         }
 
+        // Exercise 1: Company names 
         private void Button_CLick(object sender, RoutedEventArgs e)
         {
             // linq query 
             var query = from c in db.Customers
                         select c.CompanyName;
-            // get results 
+            // get results for list box 
             Ex1ListBox.ItemsSource = query.ToList();
+        }
+
+        // Exercise 2: Customer objects 
+        private void Ex2Button_CLick(object sender, RoutedEventArgs e)
+        {
+            // linq query 
+            var query = from c in db.Customers
+                        select c; 
+
+            // get results for Data Grid 
+            Ex2DataGrid.ItemsSource = query.ToList();
+        }
+
+        // Exercise 3: Order Information 
+        private void Ex3Button_CLick(object sender, RoutedEventArgs e)
+        {
+            // linq query 
+            var query = from o in db.Orders
+                        where o.Customer.City.Equals("London")
+                        || o.Customer.City.Equals("Paris")
+                        || o.Customer.Country.Equals("USA")
+                        orderby o.Customer.CompanyName
+                        select new
+                        {
+                            CustomerName = o.Customer.CompanyName,
+                            City = o.Customer.City,
+                            Address = o.ShipAddress
+                        };
+
+            Ex3DataGrid.ItemsSource = query.ToList().Distinct();   
         }
     }
 }
