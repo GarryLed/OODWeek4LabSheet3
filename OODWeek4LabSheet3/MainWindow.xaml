@@ -56,5 +56,53 @@
 
             </Grid>
         </TabItem>
+        <TabItem Header="Ex5" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex5Button"  Content="Exercise 5" Width="100" Height="25" Click="Ex5Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex5DataGrid"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex6" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex6Button"  Content="Exercise 6" Width="100" Height="25" Click="Ex6Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex6DataGrid"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex7" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex7Button"  Content="Exercise 7" Width="100" Height="25" Click="Ex7Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex7DataGrid"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex8" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex8Button"  Content="Exercise 6" Width="100" Height="25" Click="Ex8Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex8DataGrid"/>
+
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

@@ -84,5 +84,56 @@ namespace OODWeek4LabSheet3
             Ex4DataGrid.ItemsSource = query.ToList();    
 
         }
+
+        // Exercise 5: Insert information 
+        private void Ex5Button_CLick(object sender, RoutedEventArgs e)
+        {
+            Product p = new Product()
+            {
+                ProductName = "Kickapoo Jungle Joy Juice",
+                UnitPrice = 12.49m,
+                CategoryID = 1
+            };
+
+            db.Products.Add(p);
+            db.SaveChanges();
+
+            ShowProducts(Ex5DataGrid);
+
+        }
+
+        // Update product information 
+        private void Ex6Button_CLick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Multiple updates 
+        private void Ex7Button_CLick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Delete 
+        private void Ex8Button_CLick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // show products method 
+        private void ShowProducts(DataGrid currentGrid)
+        {
+            var query = from p in db.Products
+                        where p.Category.CategoryName.Equals("Beverages")
+                        orderby p.ProductID descending
+                        select new
+                        {
+                            p.ProductID,
+                            p.ProductName,
+                            p.Category.CategoryName,
+                            p.UnitPrice
+                        };
+            currentGrid.ItemsSource = query.ToList();
+        }
     }
 }
