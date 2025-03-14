@@ -44,5 +44,17 @@
 
             </Grid>
         </TabItem>
+        <TabItem Header="Ex4" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex4Button"  Content="Exercise 4" Width="100" Height="25" Click="Ex4Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex4DataGrid"/>
+
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

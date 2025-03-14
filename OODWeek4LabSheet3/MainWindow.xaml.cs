@@ -65,5 +65,24 @@ namespace OODWeek4LabSheet3
 
             Ex3DataGrid.ItemsSource = query.ToList().Distinct();   
         }
+
+        // Exercise 4: Product information 
+        private void Ex4Button_CLick(object sender, RoutedEventArgs e)
+        {
+            // linq query 
+            var query = from p in db.Products
+                        where p.Category.CategoryName.Equals("Beverages")
+                        orderby p.ProductID descending
+                        select new
+                        {
+                            p.ProductID,
+                            p.ProductName,
+                            p.Category.CategoryName,
+                            p.UnitPrice
+                        };
+
+            Ex4DataGrid.ItemsSource = query.ToList();    
+
+        }
     }
 }
