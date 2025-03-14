@@ -20,9 +20,19 @@ namespace OODWeek4LabSheet3
     /// </summary>
     public partial class MainWindow : Window
     {
+        NORTHWNDEntities db = new NORTHWNDEntities(); // referenct the database model 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_CLick(object sender, RoutedEventArgs e)
+        {
+            // linq query 
+            var query = from c in db.Customers
+                        select c.CompanyName;
+            // get results 
+            Ex1ListBox.ItemsSource = query.ToList();
         }
     }
 }

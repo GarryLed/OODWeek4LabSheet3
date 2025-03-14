@@ -8,11 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="80*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Content=""/>
+        <Button Grid.Row="0" Content="Get Data" Width="100" Height="25" Click="Button_CLick"/>
+        <ListBox Grid.Row="1" Name="Ex1ListBox"/>
 
     </Grid>
 </Window>
