@@ -102,24 +102,50 @@ namespace OODWeek4LabSheet3
 
         }
 
-        // Update product information 
+        // Exercise 6: Update product information 
         private void Ex6Button_CLick(object sender, RoutedEventArgs e)
         {
+            Product p1 = (db.Products
+                .Where(p => p.ProductName.StartsWith("Kick"))
+                .Select(p => p)).First();
+
+            p1.UnitPrice = 100m; 
+
+            ShowProducts(Ex6DataGrid); // show products for exercise 6 
 
         }
 
-        // Multiple updates 
+        // Exercise 7: Multiple updates 
         private void Ex7Button_CLick(object sender, RoutedEventArgs e)
         {
+            var products = from p in db.Products
+                           where p.ProductName.StartsWith("Kick")
+                           select p;
+
+            foreach (var item in products)
+            {
+                item.UnitPrice = 100m; 
+            }
+
+            db.SaveChanges();
+            ShowProducts(Ex7DataGrid);
 
         }
 
-        // Delete 
+        // Exercise 8: Delete 
         private void Ex8Button_CLick(object sender, RoutedEventArgs e)
         {
+            var products = from p in db.Products
+                           where p.ProductName.StartsWith("Kick")
+                           select p;
 
+            db.Products.RemoveRange(products);
+            db.SaveChanges();
+            ShowProducts(Ex8DataGrid);
         }
 
+
+        // Method 
         // show products method 
         private void ShowProducts(DataGrid currentGrid)
         {
@@ -134,6 +160,12 @@ namespace OODWeek4LabSheet3
                             p.UnitPrice
                         };
             currentGrid.ItemsSource = query.ToList();
+        }
+
+        private void Ex9Button_CLick(object sender, RoutedEventArgs e)
+        {
+            var query = db.Customers_By_City("London");
+            Ex9DataGrid.ItemsSource = query.ToList();
         }
     }
 }

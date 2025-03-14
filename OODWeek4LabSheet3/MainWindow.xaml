@@ -99,8 +99,20 @@
                     <RowDefinition Height="90*"/>
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" Name="Ex8Button"  Content="Exercise 6" Width="100" Height="25" Click="Ex8Button_CLick"/>
+                <Button Grid.Row="0" Name="Ex8Button"  Content="Exercise 8" Width="100" Height="25" Click="Ex8Button_CLick"/>
                 <DataGrid Grid.Row="1" Name="Ex8DataGrid"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Header="Ex9" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex9Button"  Content="Exercise 9" Width="100" Height="25" Click="Ex9Button_CLick"/>
+                <DataGrid Grid.Row="1" Name="Ex9DataGrid"/>
 
             </Grid>
         </TabItem>
